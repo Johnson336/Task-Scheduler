@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wgu.c195.schedulingsystem.controllers.ReportsController">
+   <children>
+      <TabPane layoutX="10.0" layoutY="57.0" prefHeight="410.0" prefWidth="980.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Report 1">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="5.0" layoutY="5.0" text="Total Number of Customer Appointments by Type and Month" />
+                        <TableView fx:id="table_byTypeAndMonth" layoutX="294.0" layoutY="35.0" prefHeight="335.0" prefWidth="393.0">
+                          <columns>
+                            <TableColumn fx:id="table_month" prefWidth="123.0" text="Month" />
+                            <TableColumn fx:id="table_type" prefWidth="168.0" text="Type" />
+                            <TableColumn fx:id="table_quantity" prefWidth="100.0" text="Quantity" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Report 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="5.0" layoutY="5.0" text="Contact Schedule" />
+                        <ListView fx:id="list_contacts" layoutX="14.0" layoutY="56.0" prefHeight="314.0" prefWidth="200.0" />
+                        <Label layoutX="89.0" layoutY="39.0" text="Contacts" />
+                        <TableView fx:id="table_contactSchedule" layoutX="224.0" layoutY="22.0" prefHeight="348.0" prefWidth="747.0">
+                          <columns>
+                            <TableColumn fx:id="table_AppID" prefWidth="46.0" text="ApptID" />
+                            <TableColumn fx:id="table_AppTitle" prefWidth="114.0" text="Title" />
+                            <TableColumn fx:id="table_AppType" prefWidth="76.0" text="Type" />
+                            <TableColumn fx:id="table_AppDescription" prefWidth="179.0" text="Description" />
+                            <TableColumn fx:id="table_AppStart" prefWidth="122.0" text="Start" />
+                            <TableColumn fx:id="table_AppEnd" prefWidth="138.0" text="End" />
+                            <TableColumn fx:id="table_AppCustomerID" prefWidth="70.0" text="CustomerID" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Report 3">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="5.0" layoutY="5.0" text="Weekly Appointment Breakdown" />
+                        <TableView fx:id="table_weekly" layoutX="279.0" layoutY="29.0" prefHeight="343.0" prefWidth="422.0">
+                          <columns>
+                            <TableColumn fx:id="table_weeklyYear" prefWidth="132.0" text="Year" />
+                            <TableColumn fx:id="table_weeklyWeek" prefWidth="164.0" text="Week Number" />
+                              <TableColumn fx:id="table_weeklyQuantity" prefWidth="124.0" text="Quantity" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="467.0" layoutY="18.0" text="Reports">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="button_back" layoutX="927.0" layoutY="16.0" mnemonicParsing="false" onAction="#onClickBack" text="Go Back" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1090" prefWidth="1020.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wgu.c195.schedulingsystem.controllers.CRUDController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="530.0" prefWidth="1000.0" style="-fx-border-color: black; -fx-border-width: 2px; -fx-border-radius: 5px;">
+         <children>
+            <Label layoutX="14.0" layoutY="10.0" text="Customers">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <TableView fx:id="table_Customer" layoutX="200.0" layoutY="114.0" prefHeight="336.0" prefWidth="790.0">
+              <columns>
+                  <TableColumn fx:id="table_CustomerID" prefWidth="36.0" text="ID" />
+                <TableColumn fx:id="table_CustomerName" prefWidth="81.0" text="Name" />
+                <TableColumn fx:id="table_CustomerAddress" prefWidth="134.0" text="Address" />
+                  <TableColumn fx:id="table_CustomerPostal" prefWidth="91.0" text="Postal Code" />
+                  <TableColumn fx:id="table_CustomerPhone" prefWidth="130.0" text="Phone Number" />
+                  <TableColumn fx:id="table_CustomerDivision" prefWidth="74.0" text="Division" />
+                  <TableColumn fx:id="table_CustomerCountry" prefWidth="82.0" text="Country" />
+              </columns>
+            </TableView>
+            <Label layoutX="20.0" layoutY="85.0" text="Customer ID" />
+            <Label layoutX="20.0" layoutY="135.0" text="Name" />
+            <Label layoutX="20.0" layoutY="193.0" text="Address" />
+            <Label layoutX="20.0" layoutY="251.0" text="Postal Code" />
+            <Label layoutX="20.0" layoutY="307.0" text="Phone Number" />
+            <Label layoutX="20.0" layoutY="367.0" text="Division" />
+            <Label layoutX="20.0" layoutY="420.0" text="Country" />
+            <TextField fx:id="textField_customerID" disable="true" editable="false" layoutX="31.0" layoutY="104.0" promptText="Auto-Gen -- Disabled" />
+            <TextField fx:id="textField_CustomerName" layoutX="31.0" layoutY="156.0" />
+            <TextField fx:id="textField_CustomerAddress" layoutX="31.0" layoutY="210.0" />
+            <TextField fx:id="textField_CustomerPostal" layoutX="31.0" layoutY="268.0" />
+            <TextField fx:id="textField_CustomerPhone" layoutX="30.0" layoutY="328.0" />
+            <ComboBox fx:id="combo_CustomerDivision" layoutX="35.0" layoutY="384.0" prefWidth="150.0" />
+            <ComboBox fx:id="combo_CustomerCountry" layoutX="35.0" layoutY="437.0" onAction="#selectedCountry" prefWidth="150.0" />
+            <Button fx:id="button_CustomerAdd" layoutX="22.0" layoutY="483.0" mnemonicParsing="false" onAction="#doAddCustomer" text="Add" />
+            <Button fx:id="button_CustomerUpdate" layoutX="74.0" layoutY="483.0" mnemonicParsing="false" onAction="#doUpdateCustomer" text="Update" />
+            <Button fx:id="button_CustomerDelete" layoutX="144.0" layoutY="483.0" mnemonicParsing="false" onAction="#doDeleteCustomer" text="Delete" />
+            <Button fx:id="button_Reports" onAction="#gotoReports" layoutX="892.0" layoutY="45.0" mnemonicParsing="false" text="Reports" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="550.0" prefHeight="530.0" prefWidth="1000.0" style="-fx-border-color: black; -fx-border-width: 2px; -fx-border-radius: 5px;">
+         <children>
+            <Label layoutX="14.0" layoutY="10.0" text="Appointments">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <TableView fx:id="table_Appointment" layoutX="181.0" layoutY="81.0" prefHeight="374.0" prefWidth="809.0">
+              <columns>
+                <TableColumn fx:id="table_AppID" prefWidth="42.0" text="AppID" />
+                <TableColumn fx:id="table_AppTitle" prefWidth="63.0" text="Title" />
+                  <TableColumn fx:id="table_AppDesc" prefWidth="62.0" text="Desc" />
+                  <TableColumn fx:id="table_AppLoc" prefWidth="71.0" text="Loc" />
+                  <TableColumn fx:id="table_AppContact" prefWidth="72.0" text="Contact" />
+                  <TableColumn fx:id="table_AppType" prefWidth="73.0" text="Type" />
+                  <TableColumn fx:id="table_AppStart" prefWidth="60.0" text="Start" />
+                  <TableColumn fx:id="table_AppEnd" prefWidth="64.0" text="End" />
+                  <TableColumn fx:id="table_AppCustID" prefWidth="75.0" text="CustID" />
+                  <TableColumn fx:id="table_AppUserID" prefWidth="75.0" text="UserID" />
+              </columns>
+            </TableView>
+            <Label layoutX="10.0" layoutY="51.0" text="Appointment ID" />
+            <Label layoutX="10.0" layoutY="93.0" text="Title" />
+            <Label layoutX="10.0" layoutY="134.0" text="Description" />
+            <Label layoutX="10.0" layoutY="176.0" text="Location" />
+            <Label layoutX="10.0" layoutY="218.0" text="Contact" />
+            <Label layoutX="10.0" layoutY="260.0" text="Type" />
+            <Label layoutX="10.0" layoutY="302.0" text="Date" />
+            <Label layoutX="10.0" layoutY="344.0" text="Start Time" />
+            <Label layoutX="10.0" layoutY="386.0" text="End Time" />
+            <Label layoutX="10.0" layoutY="428.0" text="Customer ID" />
+            <Label layoutX="10.0" layoutY="470.0" text="User ID" />
+             <Label layoutX="350.0" layoutY="55.0" text="Appointment Filter:" />
+             <RadioButton fx:id="radio_FilterAll" layoutX="480.0" layoutY="55.0" onAction="#selectRadio" selected="true" text="All" />
+             <RadioButton fx:id="radio_FilterWeek" layoutX="525.0" layoutY="55.0" onAction="#selectRadio" text="Week" />
+             <RadioButton fx:id="radio_FilterMonth" layoutX="590.0" layoutY="55.0" onAction="#selectRadio" text="Month" />
+             <Label layoutX="670.0" layoutY="40.0" text="Showing appointments between dates:" />
+             <Label fx:id="label_filterType" layoutX="730.0" layoutY="55.0" />
+            <TextField fx:id="textField_AppID" disable="true" editable="false" layoutX="11.0" layoutY="66.0" promptText="Auto-Gen -- Disabled" />
+            <TextField fx:id="textField_AppTitle" layoutX="10.0" layoutY="107.0" />
+            <TextField fx:id="textField_AppDesc" layoutX="10.0" layoutY="149.0" />
+            <TextField fx:id="textField_AppLoc" layoutX="10.0" layoutY="191.0" />
+            <ComboBox fx:id="combo_AppContact" layoutX="11.0" layoutY="233.0" prefWidth="150.0" />
+            <TextField fx:id="textField_AppType" layoutX="11.0" layoutY="275.0" />
+            <DatePicker fx:id="datePicker" layoutX="11.0" layoutY="317.0" prefHeight="25.0" prefWidth="161.0" />
+            <TextField fx:id="textField_timeStart" layoutX="11.0" layoutY="359.0" />
+            <TextField fx:id="textField_timeEnd" layoutX="11.0" layoutY="401.0" />
+            <TextField fx:id="textField_AppCustomerID" layoutX="11.0" layoutY="443.0" />
+            <TextField fx:id="textField_AppUserID" layoutX="11.0" layoutY="485.0" />
+            <Button fx:id="button_AppAdd" layoutX="200.0" layoutY="480.0" mnemonicParsing="false" onAction="#doAddAppointment" text="Add" />
+            <Button fx:id="button_AppUpdate" layoutX="252.0" layoutY="480.0" mnemonicParsing="false" onAction="#doUpdateAppointment" text="Update" />
+            <Button fx:id="button_AppDelete" layoutX="322.0" layoutY="480.0" mnemonicParsing="false" onAction="#doDeleteAppointment" text="Delete" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
