@@ -1,7 +1,5 @@
 ## WGU C195 Software II - Task 1 Scheduling System
  - Author: Cole Niermeyer
- - Email: cnierm2@wgu.edu
- - Student ID: 010690919
  -----
  - The purpose of this application is to utilize advanced features of Java in order to demonstrate competency in the
 following areas:
