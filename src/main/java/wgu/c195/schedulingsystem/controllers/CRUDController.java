@@ -513,7 +513,7 @@ public class CRUDController extends GenericController implements Initializable {
      */
     public boolean outsideBusinessHours(Appointment a) {
         LocalDateTime estStartHours = LocalDateTime.of(datePicker.getValue(), LocalTime.of(8, 0, 0));
-        LocalDateTime estEndHours = LocalDateTime.of(datePicker.getValue(), LocalTime.of(20, 0, 0));
+        LocalDateTime estEndHours = LocalDateTime.of(datePicker.getValue(), LocalTime.of(22, 0, 0));
         LocalDateTime localStartHours = DBQuery.convertTime(estStartHours, "America/New_York", "local");
         LocalDateTime localEndHours = DBQuery.convertTime(estEndHours, "America/New_York", "local");
         if (a.getStart().isBefore(localStartHours) || a.getStart().isAfter(localEndHours)) {
@@ -536,6 +536,10 @@ public class CRUDController extends GenericController implements Initializable {
     public boolean overlapsExisting(Appointment a) throws SQLException {
         ObservableList<Appointment> customerAppointments = DBQuery.getDBAppointmentsByCustomerID(a.getCustomerId());
         for (Appointment app : customerAppointments) {
+            // Existing appointment shouldn't be checked against when updating
+            if (app.getId() == a.getId()) {
+                continue;
+            }
             // System.out.printf("NewApp %d begin: %s end: %s\nCompared to app %d begin: %s end %s\n", a.getId(), a.getStart(), a.getEnd(), app.getId(), app.getStart(), app.getEnd());
             /**
              * (StartA <= EndB) and (EndA >= StartB)
