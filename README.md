@@ -1,6 +1,5 @@
-## WGU C195 Software II - Task 1 Scheduling System
- - Author: Cole Niermeyer
- -----
+## Software II - Advanced Java Concepts - Task Scheduling System Desktop Application
+
  - The purpose of this application is to utilize advanced features of Java in order to demonstrate competency in the
 following areas:
  - Create, Update, Delete records from a MySQL database using SQL Prepared Statements.
@@ -15,7 +14,7 @@ following areas:
  - Timestamps stored in the MySQL database in UTC time and correctly converted to user Local time for validation.
  - Use of Lambda expressions and dynamic programming techniques. CRUDController.initialize() and CRUDController.initCustomers()
  - Create forms using JavaFX SceneBuilder with appropriate backend Java Controller classes.
------
+
 ## Development Details:
  - IntelliJ IDEA 2022.3.1 (Community Edition)
  - Build #IC-223.8214.52, built on December 20, 2022
@@ -32,7 +31,7 @@ following areas:
  - JavaFX Version: JavaFX 19.0.1
  - JDBC: mysql-connector-j-8.0.32
 -----
-## Directions
+## Directions to Run program
  - Open Project folder in IntelliJ.
  - Add JDBC, JDK and JavaFX libraries to project.
  - Change database login information in DBConnector.java if necessary.
